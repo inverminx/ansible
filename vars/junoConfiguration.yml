@@ -9,9 +9,11 @@ mysqlRootPassword: "Aa123456"
 
 # KEYSTONE
 keystoneAdminUrl: http://{{controllerHostname}}:35357/v2.0
+authUrl: http://{{controllerHostname}}:35357/v2.0
 keystoneInternalUrl: http://{{controllerHostname}}:5000/v2.0
 keystonePublicUrl: http://{{controllerHostname}}:5000/v2.0
 adminTenantName: "admin"
+adminUserName: "admin"
 serviceTenantName: "keystone"
 adminToken: "d3458870720beac8605a"
 keystoneMysqlPassword: "Aa123456"

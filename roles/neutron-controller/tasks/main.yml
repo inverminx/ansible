@@ -55,17 +55,30 @@
       dest: /var/lib/neutron/neutron.sqlite
       state: absent
 
+  - name: Get service tenant ID
+    shell: keystone --os-tenant-name {{adminTenantName}} --os-username {{adminUserName}} --os-password {{adminPassword}} --os-auth-url {{authUrl}} tenant-get {{serviceTenantName}}|grep -w id|awk {'print $4'}
+    register: serviceTenantID
+
   - name: update neutron configuration files from templates
     template:
-      src: controller.{{ item }}
+      src: "{{ item }}"
       dest: /etc/neutron/{{ item }}
       owner: "neutron"
       group: "neutron"
       mode: 0600
     with_items: 
      - neutron.conf
-
-#  - name: ensure database is synced
+ 
+  - name: update ml2 configuration files from templates
+    template:
+      src: "{{ item }}"
+      dest: /etc/neutron/plugins/ml2/{{ item }}
+      owner: "neutron"
+      group: "neutron"
+      mode: 0600
+    with_items: 
+     - ml2_conf.ini
+ #  - name: ensure database is synced
 #    command: /usr/bin/neutron-manage db_sync
 
   - name: Populate neutron service database
