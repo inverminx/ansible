@@ -82,7 +82,7 @@
 #    command: /usr/bin/neutron-manage db_sync
 
   - name: Populate neutron service database
-    shell: su -s /bin/sh -c "neutron-manage db sync" neutron
+    shell: su -s /bin/sh -c "neutron-db-manage --config-file /etc/neutron/neutron.conf --config-file /etc/neutron/plugins/ml2/ml2_conf.ini upgrade juno" neutron
 
   - name: ensure services are started and enabled
     service:
@@ -91,5 +91,6 @@
       enabled: yes
     with_items: 
       - neutron-server
-      - neutron-plugin-ml2
-      - python-neutronclient
+      - nova-api
+      - nova-scheduler
+      - nova-conductor
