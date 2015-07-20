@@ -33,7 +33,7 @@
 
   - name: Change hardware configuration from KVM to QEMU   
     template:
-      src: "{{ item }}"
+      src: "{{ item }}"	
       dest: /etc/nova/{{ item }}
       owner: "nova"
       group: "nova"

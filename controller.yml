@@ -13,6 +13,7 @@
    - keystone
    - glance
    - nova-controller
+   - neutron-controller
 #   - { role: createVolume, volume: "mysql", volumeSize: "{{mysqlVolumeSize}}", serverLocation: "{{ mysqlServerLocation }}"}
 #   - { role: createVolume, volume: "elasticsearch", volumeSize: "{{elasticsearchVolumeSize}}", serverLocation: "{{ elasticsearchServerLocation }}"}
 #   - { role: createVolume, volume: "cassandra", volumeSize: "{{cassandraVolumeSize}}", serverLocation: "{{ cassandraServerLocation }}"}

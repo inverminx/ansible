@@ -29,3 +29,9 @@ novaMysqlPassword: "Aa123456"
 novaAdminUrl: "http://{{ controllerHostname }}:8774/v2/%(tenant_id)s"
 novaPublicUrl: "http://{{ controllerHostname }}:8774/v2/%(tenant_id)s"
 novaInternalUrl: "http://{{ controllerHostname }}:8774/v2/%(tenant_id)s"
+
+#NEUTRON
+neutronMysqlPassword: "Aa123456"
+neutronAdminUrl: "http://{{controllerHostname}}:9696"
+neutronPublicUrl: "http://{{controllerHostname}}:9696"
+neutronInternalUrl: "http://{{controllerHostname}}:9696"
