@@ -1,2 +1,4 @@
 ---
 isVerbose: "True"
+managementNetworkPrefix: "10.10.10"
+tunnelNetworkPrefix: "20.20.20"

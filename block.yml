@@ -1,5 +1,5 @@
 ---
-- hosts: compute
+- hosts: block
   sudo: yes
   vars:
   vars_files:
@@ -7,5 +7,5 @@
 
   roles:
    - nodeBasic 
-   - nova-compute
-   - neutron-compute
+   - cinder-controller
+   - cinder-block
