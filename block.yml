@@ -7,5 +7,4 @@
 
   roles:
    - nodeBasic 
-   - cinder-controller
    - cinder-block
